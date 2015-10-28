@@ -29,8 +29,8 @@ body{
 	.name{
 		h1{
 			a{
-				position: relative;
-				top: 4px;
+				line-height: rem-calc(88);
+				height:  $topbar-height;
 				color:$primary-color;
 				padding: 0;
 				span{
@@ -51,16 +51,22 @@ body{
 		padding: 10px 0;
 	}
 	li:not(.has-form){
-		@media #{$small-only}{
+		&, &.active{
 			a:not(.button){
-				padding-left: 0;
+				@media #{$small-only}{
+					padding-left: 0;
+				}
+				@media #{$topbar-media-query}{
+					line-height: rem-calc(82);
+					height:  $topbar-height;
+				}
 			}
-		}
-		&:last-child a:not(.button) {
-			@media #{$topbar-media-query}{
-				padding-right: 0;
-			}
+			&:last-child a:not(.button) {
+				@media #{$topbar-media-query}{
+					padding-right: 0;
+				}
 
+			}
 		}
 	}
 }
